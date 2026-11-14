@@ -1,5 +1,9 @@
 # See https://git-scm.com/docs/gitattributes for more about git attribute files.
 
+# Binstubs and shell scripts must keep LF endings and a POSIX shebang, or CI cannot
+# execute them: a CRLF shebang is read as "ruby\r" and a .exe shebang is not found.
+bin/* text eol=lf
+
 # Mark the database schema as having been generated.
 db/schema.rb linguist-generated
 
